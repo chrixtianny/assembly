@@ -4,10 +4,10 @@ Este repositório contém o projeto desenvolvido como parte da disciplina de Arq
 
 ## Descrição do Projeto
 
-O projeto consiste em um programa em linguagem MIPS que oferece as seguintes funcionalidades:
+O projeto consiste em um programa em linguagem MIPS que oferece ao usuário um menu com as seguintes possibilidades:
 
-- Conversão de Celsius para Fahrenheit
-- Cálculo do enésimo termo da sequência de Fibonacci
+- Conversão de Fahrenheit para Celsius
+- Cálculo do enésimo termo da sequência de Fibonacci, dado um N informado pelo usuário
 - Cálculo do enésimo número par, dado um N informado pelo usuário
 
 ## Funcionalidades
