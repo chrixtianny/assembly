@@ -1,5 +1,5 @@
 ################################################################################
-# Nome do Projeto: Conversor de Temperaturas e Sequência de Fibonacci em MIPS
+# Nome do Projeto: Conversor de Temperaturas, Sequência de Fibonacci e Enésimo Par em Assembly MIPS
 #
 # Autor(es): Christianny, Ingrid e Rodrigo
 # Disciplina: Arquitetura e Organização de Computadores
@@ -7,13 +7,16 @@
 # Professor: Ivo Augusto Andrade Rocha Calado
 #
 # Descrição:
-# Este programa em Assembly MIPS realiza a conversão de temperaturas de graus Celsius (ºC) para Fahrenheit (ºF),
-# calcula os termos da sequência de Fibonacci e determina o enésimo número par, com base em uma entrada fornecida pelo usuário.
-# O programa foi desenvolvido como parte do trabalho da disciplina de Arquitetura e Organização de Computadores do curso de Sistemas de Informações.
+# Este programa em Assembly MIPS realiza a conversão de temperaturas de graus Fahrenheit (ºF) para Celsius (ºC);
+# calcula os termos da sequência de Fibonacci;
+# e determina o enésimo número par, com base em uma entrada fornecida pelo usuário.
+# O programa foi desenvolvido como parte do trabalho da disciplina de Arquitetura e Organização de Computadores 
+# do curso de Sistemas de Informação.
 # O objetivo é demonstrar o conhecimento em linguagem Assembly MIPS e sua aplicação para realizar operações matemáticas simples.
 #
 # Arquivo: projeto_assembly_mips.asm
 ################################################################################
+
 
 
 .data
