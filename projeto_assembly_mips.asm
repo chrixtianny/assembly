@@ -1,7 +1,7 @@
 ################################################################################
 # Nome do Projeto: Conversor de Temperaturas, Sequência de Fibonacci e Enésimo Par em Assembly MIPS
 #
-# Autor(es): Christianny, Ingrid e Rodrigo
+# Autores: Christianny, Ingrid e Rodrigo
 # Disciplina: Arquitetura e Organização de Computadores
 # Instituição: Instituto Federal de Alagoas - IFAL
 # Professor: Ivo Augusto Andrade Rocha Calado
