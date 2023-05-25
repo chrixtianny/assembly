@@ -1,21 +1,34 @@
-# Nome do arquivo: projeto_assembly_mips.asm
-# Criado por: Christianny, Ingrid e Rodrigo 
-# Programa escrito para com as opções de:
-# converter temperaturas de graus ºC para ºF, 
-# Calcular os termos da sequência de Fibonacci
-# e calcular o enésimo número par 
+################################################################################
+# Nome do Projeto: Conversor de Temperaturas e Sequência de Fibonacci em MIPS
+#
+# Autor(es): Christianny, Ingrid e Rodrigo
+# Disciplina: Arquitetura e Organização de Computadores
+# Instituição: Instituto Federal de Alagoas - IFAL
+# Professor: Ivo Augusto Andrade Rocha Calado
+#
+# Descrição:
+# Este programa em Assembly MIPS realiza a conversão de temperaturas de graus Celsius (ºC) para Fahrenheit (ºF),
+# calcula os termos da sequência de Fibonacci e determina o enésimo número par, com base em uma entrada fornecida pelo usuário.
+# O programa foi desenvolvido como parte do trabalho da disciplina de Arquitetura e Organização de Computadores do curso de Sistemas de Informações.
+# O objetivo é demonstrar o conhecimento em linguagem Assembly MIPS e sua aplicação para realizar operações matemáticas simples.
+#
+# Arquivo: projeto_assembly_mips.asm
+################################################################################
+
 
 .data
-    F1: .float 32.0        # Constante utilizada na conversão de Fahrenheit para Celsius
-    F2: .float 5.0         # Constante utilizada na conversão de Fahrenheit para Celsius
-    F3: .float 9.0         # Constante utilizada na conversão de Fahrenheit para Celsius
+    # Constantes utilizadas na conversão de Fahrenheit para Celsius
+    F1: .float 32.0     
+    F2: .float 5.0        
+    F3: .float 9.0  
+    # String a ser exibida no Run I/O do Mars
     msg1: .asciiz "Indique a temperatura em Fahrenheit: " 
     msg2: .asciiz "A temperatura em Celsius é: "   
     msg3: .asciiz "Digite o enésimo termo da sequência de Fibonacci que você gostaria de saber: "
     msg4: .asciiz "O enésimo termo da sequência de Fibonacci é: " 
     msg5: .asciiz "Considerando 2 como o primeiro termo par. Digite o enésimo número par que você gostaria de saber: "
     msg6: .asciiz "O enésimo termo par é: "     
-    menu: .asciiz "\n1 - Fahrenheit -> Celsius \n2 - Fibonacci\n3 - enésimo termo par\n4 - Sair\n"   
+    menu: .asciiz "\n1 - Fahrenheit -> Celsius \n2 - Fibonacci\n3 - Enésimo termo par\n4 - Sair\n"   
 .text
 opcoes:
     # Impressão do menu
@@ -31,10 +44,10 @@ opcoes:
     move $t0, $v0       # Move o valor lido para $t0
 
     # Condicionais do menu
-    beq $t0, 1, caso1   # Se $t0 for igual a 1, Salta (jump) para o caso1
-    beq $t0, 2, caso2   # Se $t0 for igual a 2, Salta (jump) para o caso2
-    beq $t0, 3, caso3   # Se $t0 for igual a 3, Salta (jump) para o caso3
-    beq $t0, 4, caso4   # Se $t0 for igual a 4, Salta (jump) para o caso4
+    beq $t0, 1, caso1   # Se $t0 for igual a 1, salta para o caso1
+    beq $t0, 2, caso2   # Se $t0 for igual a 2, salta para o caso2
+    beq $t0, 3, caso3   # Se $t0 for igual a 3, salta para o caso3
+    beq $t0, 4, caso4   # Se $t0 for igual a 4, salta para o caso4
 
 caso1:
     # Conversão de Fahrenheit para Celsius
@@ -67,7 +80,7 @@ caso1:
     mov.s $f12, $f6     # Move o valor de $f6 para $f12
     syscall             # Realiza a chamada do sistema para imprimir o valor
 
-    j opcoes            # Salta (jump) para o incio das opções
+    j opcoes            # Salta para o início das opções
 
 caso2:
     # Cálculo do enésimo termo da sequência de Fibonacci
@@ -80,7 +93,7 @@ caso2:
     li $v0, 5           # Carrega o valor 5 em $v0 para ler um inteiro
     syscall             # Realiza a chamada do sistema para ler o número
 
-    # Inicializando as váriáveis
+    # Inicializando as variáveis
     move $t0, $v0       # Move o valor lido para $t0
     move $t1, $zero     # Inicializa $t1 com zero
     move $t2, $zero     # Inicializa $t2 com zero
@@ -89,10 +102,10 @@ caso2:
     addi $t4, $t4, 1    # Inicializa o contador do loop while em $t4 com 1
 
 while:
-    bge $t4, $t0, saida # Compara se o contador $t4 é maior ou igual ao valor lido $t0, se sim, Salta (jump) para o rótulo saida
+    bge $t4, $t0, saida # Compara se o contador $t4 é maior ou igual ao valor lido $t0, se sim, salta para o rótulo saida
     add $t3, $t1, $t2   # Calcula a soma de $t1 e $t2 e armazena em $t3
 
-    # Atualizando as váriáveis
+    # Atualizando as variáveis
     move $t1, $t2       # Move o valor de $t2 para $t1
     move $t2, $t3       # Move o valor de $t3 para $t2
 
@@ -113,7 +126,7 @@ saida:
     move $a0, $t1       # Move o valor armazenado em $t1 para $a0
     syscall             # Realiza a chamada do sistema para imprimir o valor
 
-    j opcoes            # Salta (jump) para o início das opções
+    j opcoes            # Salta para o início das opções
 
 caso3:
     # Cálculo do enésimo termo par
@@ -144,7 +157,7 @@ caso3:
     move $a0, $t2       # Move o valor armazenado em $t2 para $a0 (argumento para syscall)
     syscall             # Realiza a chamada do sistema para imprimir o valor
 
-    j opcoes            # Salta (jump) (jump) para o início das opções
+    j opcoes            # Salta para o início das opções
 
 caso4:
     # Encerrar o programa

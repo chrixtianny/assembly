@@ -1,48 +1,60 @@
 .data
-prompt_num: .asciiz "Indique um n�mero para verificar se pertence � sequ�ncia de Fibonacci: "
+
+prompt_num: .asciiz "Indique um número para verificar se pertence à sequência de Fibonacci: "
 a: .word 0
 b: .word 1
-mensagem_pertence: .asciiz "Pertence � Sequ�ncia"
-mensagem_nao_pertence: .asciiz "N�o pertence � Sequ�ncia"
+mensagem_pertence: .asciiz "Pertence à Sequência"
+mensagem_nao_pertence: .asciiz "Não pertence à Sequência"
 
 .text
 main:
-li $v0, 4
-la $a0, prompt_num
-syscall
+    # Imprimir a mensagem solicitando um número para verificar
+    li $v0, 4
+    la $a0, prompt_num
+    syscall
 
-li $v0, 5
-syscall
-move $t5, $v0
+    # Ler o número fornecido pelo usuário
+    li $v0, 5
+    syscall
+    move $t5, $v0
     
-lw $t1, a
-lw $t2, b
+    # Carregar os primeiros valores da sequência de Fibonacci em registradores
+    lw $t1, a
+    lw $t2, b
     
 loop:
-add $t3, $t1, $t2
+    # Calcular o próximo termo da sequência de Fibonacci
+    add $t3, $t1, $t2
 
-# add $t6, $t5, $t3 Proximo valor
+    # Comparar o próximo termo com o número fornecido
+    beq $t3, $t5, pertence
 
-beq $t3, $t5, pertence
-slt $t4, $t3, $t5
-beqz $t4, nao_pertence
+    # Verificar se o próximo termo é maior que o número fornecido
+    slt $t4, $t3, $t5
+    beqz $t4, nao_pertence
 
-move $t1, $t2
-move $t2, $t3
+    # Atualizar os registradores para o próximo cálculo
+    move $t1, $t2
+    move $t2, $t3
     
-j loop
+    # Saltar de volta para o início do loop
+    j loop
 
 pertence:
-li $v0, 4
-la $a0, mensagem_pertence
-syscall
-j fim
+    # O número fornecido pertence à sequência de Fibonacci
+    li $v0, 4
+    la $a0, mensagem_pertence
+    syscall
+    j fim
+
 nao_pertence:
-li $v0, 4
-la $a0, mensagem_nao_pertence
-syscall
-j fim
+    # O número fornecido não pertence à sequência de Fibonacci
+    li $v0, 4
+    la $a0, mensagem_nao_pertence
+    syscall
+    j fim
 
 fim:
-li $v0, 10
-syscall
+    # Encerrar o programa
+    li $v0, 10
+    syscall
