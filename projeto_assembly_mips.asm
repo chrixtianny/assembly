@@ -31,10 +31,10 @@ opcoes:
     move $t0, $v0       # Move o valor lido para $t0
 
     # Condicionais do menu
-    beq $t0, 1, caso1   # Se $t0 for igual a 1, Salta (jump) (jump) para o caso1
-    beq $t0, 2, caso2   # Se $t0 for igual a 2, Salta (jump) (jump) para o caso2
-    beq $t0, 3, caso3   # Se $t0 for igual a 3, Salta (jump) (jump) para o caso3
-    beq $t0, 4, caso4   # Se $t0 for igual a 4, Salta (jump) (jump) para o caso4
+    beq $t0, 1, caso1   # Se $t0 for igual a 1, Salta (jump) para o caso1
+    beq $t0, 2, caso2   # Se $t0 for igual a 2, Salta (jump) para o caso2
+    beq $t0, 3, caso3   # Se $t0 for igual a 3, Salta (jump) para o caso3
+    beq $t0, 4, caso4   # Se $t0 for igual a 4, Salta (jump) para o caso4
 
 caso1:
     # Conversão de Fahrenheit para Celsius
