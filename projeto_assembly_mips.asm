@@ -24,7 +24,7 @@
     F1: .float 32.0     
     F2: .float 5.0        
     F3: .float 9.0  
-    # String a ser exibida no Run I/O do Mars
+    # Strings a serem exibidas no Run I/O do Mars
     msg1: .asciiz "Indique a temperatura em Fahrenheit: " 
     msg2: .asciiz "A temperatura em Celsius é: "   
     msg3: .asciiz "Digite o enésimo termo da sequência de Fibonacci que você gostaria de saber: "
