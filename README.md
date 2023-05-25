@@ -1,6 +1,6 @@
-# Projeto de Arquitetura e Organização de Computadores - IFAL
+# Projeto de Assembly MIPS - IFAL
 
-Este repositório contém o projeto desenvolvido como parte do curso de Arquitetura e Organização de Computadores no Instituto Federal de Alagoas (IFAL) na graduação de Sistemas de Informações.
+Este repositório contém o projeto desenvolvido como parte da disciplina de Arquitetura e Organização de Computadores no Instituto Federal de Alagoas (IFAL) na graduação de Sistemas de Informações.
 
 ## Descrição do Projeto
 
