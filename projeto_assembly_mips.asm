@@ -1,7 +1,7 @@
 ################################################################################
 # Nome do Projeto: Conversor de Temperaturas, Sequência de Fibonacci e Enésimo Par em Assembly MIPS
 #
-# Autores: Christianny, Ingrid e Rodrigo
+# Autor(es): Christianny, Ingrid e Rodrigo
 # Disciplina: Arquitetura e Organização de Computadores
 # Instituição: Instituto Federal de Alagoas - IFAL
 # Professor: Ivo Augusto Andrade Rocha Calado
@@ -18,20 +18,20 @@
 ################################################################################
 
 
-
 .data
     # Constantes utilizadas na conversão de Fahrenheit para Celsius
     F1: .float 32.0     
     F2: .float 5.0        
     F3: .float 9.0  
-    # Strings a serem exibidas no Run I/O do Mars
+    # String a ser exibida no Run I/O do Mars
     msg1: .asciiz "Indique a temperatura em Fahrenheit: " 
     msg2: .asciiz "A temperatura em Celsius é: "   
     msg3: .asciiz "Digite o enésimo termo da sequência de Fibonacci que você gostaria de saber: "
     msg4: .asciiz "O enésimo termo da sequência de Fibonacci é: " 
     msg5: .asciiz "Considerando 2 como o primeiro termo par. Digite o enésimo número par que você gostaria de saber: "
     msg6: .asciiz "O enésimo termo par é: "     
-    menu: .asciiz "\n1 - Fahrenheit -> Celsius \n2 - Fibonacci\n3 - Enésimo termo par\n4 - Sair\n"   
+    menu: .asciiz "\n1 - Fahrenheit -> Celsius \n2 - Fibonacci\n3 - Enésimo termo par\n4 - Sair\n"
+    msg_erro: .asciiz "\nOpção inválida. Voltando ao menu.\n"
 .text
 opcoes:
     # Impressão do menu
@@ -40,18 +40,34 @@ opcoes:
     syscall             # Realiza a chamada do sistema para imprimir o menu
 
     # Ler número do menu
-    li $v0, 5           # Carrega o valor 5 em $v0 para ler um inteiro (código do syscall para ler um inteiro)
-    syscall             # Realiza a chamada do sistema para ler o número
-
+    li $v0, 5           # Carrega o valor 5 em $v0 para ler a entrada, que esperamos que seja um inteiro, 
+    #			com o código do syscall 5 para ler um interger. 
+    syscall             # Realiza a chamada do sistema para a leitura
+    
     # Mudando o valor de $v0 para $t0
-    move $t0, $v0       # Move o valor lido para $t0
-
+    move $t0, $v0       # Move o valor lido para $t0, que armazena inteiros
+    
+    # armazenando os valores
+    
+    li $t1, 1
+    li $t2, 2
+    li $t3, 3
+    li $t4, 4
+    
     # Condicionais do menu
-    beq $t0, 1, caso1   # Se $t0 for igual a 1, salta para o caso1
-    beq $t0, 2, caso2   # Se $t0 for igual a 2, salta para o caso2
-    beq $t0, 3, caso3   # Se $t0 for igual a 3, salta para o caso3
-    beq $t0, 4, caso4   # Se $t0 for igual a 4, salta para o caso4
+    beq $t0, $t1, caso1   # Se $t0 for igual a 1, salta para o caso1
+    beq $t0, $t2, caso2   # Se $t0 for igual a 2, salta para o caso2
+    beq $t0, $t3, caso3   # Se $t0 for igual a 3, salta para o caso3
+    beq $t0, $t4, caso4   # Se $t0 for igual a 4, salta para o caso4
+    j caso0		  # Se $t0 for um inteiro diferente das opções válidas, vai para o caso da mensagem de erro e posterior retorno ao menu
 
+caso0:
+	li $v0, 4           # Carrega o valor 4 em $v0 para imprimir uma string
+	la $a0, msg_erro    # Carrega o endereço da mensagem de erro em $a0 (argumento para syscall)
+	syscall             # Realiza a chamada do sistema para imprimir a mensagem de erro
+
+	j opcoes            # Retorna ao Menu
+	
 caso1:
     # Conversão de Fahrenheit para Celsius
     # Imprime mensagem da temperatura em Fahrenheit
