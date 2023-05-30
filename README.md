@@ -8,13 +8,15 @@ O projeto consiste em um programa em linguagem MIPS que oferece ao usuário um m
 
 - Conversão de Fahrenheit para Celsius
 - Cálculo do enésimo termo da sequência de Fibonacci, dado um N informado pelo usuário
+###### - Considera o primeiro termo da sequência igual a 1.  
 - Cálculo do enésimo número par, dado um N informado pelo usuário
+###### - Considera 2 como o primeiro termo par.
 
 ## Funcionalidades
 
-### Conversão de Celsius para Fahrenheit
+### Conversão de Fahrenheit para Celsius
 
-O usuário pode inserir uma temperatura em graus Celsius, e o programa irá convertê-la para Fahrenheit.
+###### O usuário pode inserir uma temperatura em graus Fahrenheit, e o programa irá convertê-la para Celsius, exibindo o resultado em seguida.
 
 ### Cálculo do enésimo termo da sequência de Fibonacci
 
@@ -27,8 +29,11 @@ O usuário pode informar um número N, e o programa irá calcular e exibir o en�
 ## Como utilizar
 
 1. Clone este repositório em sua máquina local.
-2. Execute o programa em um ambiente que suporte a execução de programas em linguagem MIPS.
-3. Siga as instruções apresentadas pelo programa para utilizar as funcionalidades disponíveis.
+2. Execute um programa que suporte a execução de programas em linguagem Assembly MIPS.
+3. Inicialize o arquivo .asm desse repositório no programa.
+4. Compile o código.
+5. Execute o código.
+6. Siga as instruções apresentadas pelo programa para utilizar as funcionalidades disponíveis.
 
 ## Ferramentas Utilizadas
 
