@@ -26,7 +26,7 @@ O projeto consiste em um programa em linguagem MIPS que oferece ao usuário um m
 
 ### Conversão de Fahrenheit para Celsius
 
-###### O usuário pode inserir uma temperatura em graus Fahrenheit, e o programa irá convertê-la para Celsius, exibindo o resultado em seguida.
+### O usuário pode inserir uma temperatura em graus Fahrenheit, e o programa irá convertê-la para Celsius, exibindo o resultado em seguida.
 
 ### Cálculo do enésimo termo da sequência de Fibonacci
 
