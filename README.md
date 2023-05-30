@@ -1,6 +1,16 @@
-# Projeto de Assembly MIPS - IFAL
+# Projeto em Assembly MIPS - IFAL
 
-Este repositório contém o projeto desenvolvido como parte da disciplina de Arquitetura e Organização de Computadores no Instituto Federal de Alagoas (IFAL) na graduação de Sistemas de Informações.
+#### Este repositório contém o projeto desenvolvido como parte da nota final da disciplina Arquitetura e Organização de Computadores, do Bacharelado em Sistemas de Informação do Instituto Federal de Alagoas (IFAL).
+### Ministrada pelo Professor
+
+- Prof. Dr. [Ivo Augusto Andrade Rocha Calado](https://github.com/ivocalado) - [Instituto Federal de Alagoas](https://www.ifal.edu.br)
+
+### Pessoas autoras
+
+- [Christianny Kelly Silva dos Santos](https://github.com/chrixtianny) 
+- [Ingrid Mônica da Silva Bezerra](https://github.com/ingrimonica)
+- [Rodrigo de Oliveira Farias](https://github.com/rodrigo-farias10) 
+
 
 ## Descrição do Projeto
 
@@ -8,9 +18,9 @@ O projeto consiste em um programa em linguagem MIPS que oferece ao usuário um m
 
 - Conversão de Fahrenheit para Celsius
 - Cálculo do enésimo termo da sequência de Fibonacci, dado um N informado pelo usuário
-###### - Considera o primeiro termo da sequência igual a 1.  
+###### - Considerando o primeiro termo da sequência igual a 1.  
 - Cálculo do enésimo número par, dado um N informado pelo usuário
-###### - Considera 2 como o primeiro termo par.
+###### - Considerando 2 como o primeiro termo par.
 
 ## Funcionalidades
 
@@ -39,15 +49,3 @@ O usuário pode informar um número N, e o programa irá calcular e exibir o en�
 
 - IDE: MARS 4.5
 - Linguagem: Linguagem de Montagem MIPS
-
-
-## Autores
-
-- [Christianny Kelly Silva dos Santos](https://github.com/chrixtianny) 
-- [Ingrid Mônica da Silva Bezerra](https://github.com/ingrimonica)
-- [Rodrigo de Oliveira Farias](https://github.com/rodrigo-farias10) 
-
-## Professor
-
-- Prof. Ivo Augusto Andrade Rocha Calado - [Instituto Federal de Alagoas](https://www.ifal.edu.br)
-
